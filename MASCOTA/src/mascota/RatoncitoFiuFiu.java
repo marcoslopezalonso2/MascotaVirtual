@@ -3,16 +3,21 @@ package mascota;
 public class RatoncitoFiuFiu {
      private String nombre;
      private int edad;
-     private double peso;
-     private int sensacionDeHambre;
-     private int nivelDeSuciedad;
-     private int nivelDeSalud;
-     private int nivelDeEnergia;
+     private int peso;
+     private byte hambre;
+     private byte suciedad;
+     private byte salud;
+     private byte energia;
 
-    public RatoncitoFiuFiu(String nombre, int i, int i1, int i2, int i3, int i4) {
-        // Un objeto mascota.RatoncitoFiuFiu debería informar cuando nace...
+    public RatoncitoFiuFiu(String nombre, int edad, int peso, byte hambre, byte suciedad, byte salud, byte energia) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.peso = peso;
+        this.hambre = hambre;
+        this.suciedad = suciedad;
+        this.salud = salud;
+        this.energia = energia;
     }
-
 
     public String estadisticas() {
         return null;
