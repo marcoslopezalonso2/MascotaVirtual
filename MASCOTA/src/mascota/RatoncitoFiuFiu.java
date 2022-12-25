@@ -92,11 +92,11 @@ public class RatoncitoFiuFiu {
     }
 
     public void alimentar(float cantidadAlimento) {
-        hambre -= cantidadAlimento;
+        ganarPeso(cantidadAlimento);
     }
 
     public void curar(float cantidadMedicina) {
-        salud += cantidadMedicina;
+        aumentarSalud(cantidadMedicina);
     }
 
     public void ganarPeso(float cantidad) {
