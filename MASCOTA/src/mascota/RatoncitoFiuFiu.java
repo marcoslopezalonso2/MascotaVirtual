@@ -1,15 +1,15 @@
 package mascota;
 
 public class RatoncitoFiuFiu {
-     private String nombre;
-     private int edad;
-     private int peso;
-     private byte hambre;
-     private byte suciedad;
-     private byte salud;
-     private byte energia;
+    private String nombre;
+    private int edad;
+    private int peso;
+    private int hambre;
+    private int suciedad;
+    private int  salud;
+    private int energia;
 
-    public RatoncitoFiuFiu(String nombre, int edad, int peso, byte hambre, byte suciedad, byte salud, byte energia) {
+    public RatoncitoFiuFiu(String nombre, int edad, int peso, int hambre, int suciedad, int salud, int energia) {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
@@ -20,10 +20,13 @@ public class RatoncitoFiuFiu {
     }
 
     public String estadisticas() {
-        return null;
+        return "Peso: " + peso + "\nHambre: " +
+                hambre + "\nSuciedad: " + suciedad
+                + "\nSalud: " + salud + "\nEnergia: " + energia;
     }
 
-    public void limpiar(int i) {
+    public void limpiar(float esfuerzoHigienico) {
+        suciedad -= esfuerzoHigienico;
     }
 
     public int queTramoEdad() {
@@ -46,17 +49,23 @@ public class RatoncitoFiuFiu {
         return false;
     }
 
-    public void envejecer(int i) {
+    public void envejecer(int segundos) {
+        edad += segundos;
+        salud-=6;
+        hambre +=6;
+        suciedad +=6;
+
     }
 
     public boolean tienesQuejas() {
         return false;
     }
 
-    public void alimentar(int b) {
-
+    public void alimentar(float cantidadAlimento) {
+        hambre -= cantidadAlimento;
     }
 
-    public void curar(int i) {
+    public void curar(float cantidadMedicina) {
+        salud += cantidadMedicina;
     }
 }
