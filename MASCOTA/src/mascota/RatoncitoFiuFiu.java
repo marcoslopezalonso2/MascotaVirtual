@@ -38,9 +38,9 @@ public class RatoncitoFiuFiu {
     }
 
     public boolean estasEnfermo() {
-        if(salud<=30){
+        if (salud <= 30) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -55,25 +55,26 @@ public class RatoncitoFiuFiu {
     }
 
     public boolean estasMuerto() {
-        if(salud<=0){
+        if (salud <= 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
     }
-    public boolean estasFeliz(){
-        if(!tienesHambre() && !estasEnfermo() && !estasSucio()){
+
+    public boolean estasFeliz() {
+        if (!tienesHambre() && !estasEnfermo() && !estasSucio()) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
-    public boolean tienesHambre(){
-        if(hambre >= 55){
+    public boolean tienesHambre() {
+        if (hambre >= 55) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -97,4 +98,17 @@ public class RatoncitoFiuFiu {
     public void curar(float cantidadMedicina) {
         salud += cantidadMedicina;
     }
+
+    public void ganarPeso(float cantidad) {
+        peso += cantidad;
+    }
+
+    public void aumentarEnergia(float cantidad) {
+        energia += cantidad;
+    }
+
+    public void aumentarSalud(float cantidad) {
+        salud += cantidad;
+    }
+
 }
