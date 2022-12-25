@@ -6,7 +6,7 @@ public class RatoncitoFiuFiu {
     private int peso;
     private int hambre;
     private int suciedad;
-    private int  salud;
+    private int salud;
     private int energia;
 
     public RatoncitoFiuFiu(String nombre, int edad, int peso, int hambre, int suciedad, int salud, int energia) {
@@ -38,22 +38,51 @@ public class RatoncitoFiuFiu {
     }
 
     public boolean estasEnfermo() {
-        return false;
+        if(salud<=30){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public boolean estasSucio() {
-        return false;
+        if (suciedad >= 100) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     public boolean estasMuerto() {
-        return false;
+        if(salud<=0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+    public boolean estasFeliz(){
+        if(!tienesHambre() && !estasEnfermo() && !estasSucio()){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean tienesHambre(){
+        if(hambre >= 55){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void envejecer(int segundos) {
         edad += segundos;
-        salud-=6;
-        hambre +=6;
-        suciedad +=6;
+        salud -= 1;
+        hambre += 1;
+        suciedad += 1;
 
     }
 
