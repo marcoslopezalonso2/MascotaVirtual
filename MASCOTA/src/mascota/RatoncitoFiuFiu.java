@@ -30,12 +30,33 @@ public class RatoncitoFiuFiu {
     }
 
     public int queTramoEdad() {
-        return 0;
+        int n = 0;
+        if (edad < 2500 && edad >= 0) {
+            n = 0;
+        }
+        if (edad >= 2500 && edad < 8000) {
+            n = 1;
+        } else {
+            n = 2;
+        }
+        return n;
     }
 
     public boolean estasDormido() {
-        return false;
+        if (energia >= 75) {
+            return false;
+        } else {
+
+            do {
+                aumentarEnergia(5);
+
+            } while (energia <= 50);
+            return true;
+
+        }
+
     }
+
 
     public boolean estasEnfermo() {
         if (salud <= 30) {
@@ -72,7 +93,8 @@ public class RatoncitoFiuFiu {
     }
 
     public boolean tienesHambre() {
-        if (hambre >= 55) {
+        if (hambre >= 170) {
+
             return true;
         } else {
             return false;
@@ -84,14 +106,20 @@ public class RatoncitoFiuFiu {
         salud -= 1;
         hambre += 1;
         suciedad += 1;
+        energia -= 1;
 
     }
 
     public boolean tienesQuejas() {
-        return false;
+        if (!tienesHambre() && !estasEnfermo() && !estasSucio()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void alimentar(float cantidadAlimento) {
+        hambre -= cantidadAlimento;
         ganarPeso(cantidadAlimento);
     }
 
